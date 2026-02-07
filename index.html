@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Question</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #fff5f8;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 24px;
+      margin: 20px;
+      cursor: pointer;
+    }
+
+    #no {
+      position: absolute;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    img {
+      max-width: 300px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container" id="questionPage">
+    <h1>Will you go out with me? 💖</h1>
+    <button onclick="sayYes()">Yes</button>
+    <button id="no">No</button>
+  </div>
+
+  <div class="container hidden" id="yesPage">
+    <h1>YAY!!! 🥳💘</h1>
+    <p>Best decision ever 😘</p>
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTNvcmt3NGE3NmN3dnpuaXNsaWQ4MHg3bWl0bzU4MWlpM3kxNDlzcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0MYt5jPR6QX5pnqM/giphy.gif">
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    noBtn.onmouseover = function () {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    };
+
+    function sayYes() {
+      document.getElementById("questionPage").classList.add("hidden");
+      document.getElementById("yesPage").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
